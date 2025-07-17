@@ -1,0 +1,70 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "auto_install_extensions": {
+    "html": true,
+    "dockerfile": true,
+    "docker-compose": false
+  },
+  "agent": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4.1"
+    },
+    "play_sound_when_agent_done": true,
+    "model_parameters": [],
+    "dock": "right"
+  },
+  "terminal": {
+    "dock": "bottom"
+  },
+  "collaboration_panel": {
+    "dock": "right"
+  },
+  "icon_theme": "Colored Zed Icons Theme Dark",
+  "ui_font_size": 15,
+  "buffer_font_size": 15,
+  "buffer_font_weight": 500,
+  "confirm_quit": false,
+  "cursor_blink": true,
+  "cursor_shape": "block",
+  "hide_mouse": "on_typing_and_movement",
+  "format_on_save": "on",
+  "formatter": "auto",
+  "theme": {
+    "mode": "system",
+    "light": "One Dark Pro",
+    "dark": "Ayu Dark"
+  },
+  "edit_predictions": {
+    "mode": "subtle",
+    "disabled_globs": [
+      "**/.env*",
+      "**/*.pem",
+      "**/*.key",
+      "**/*.cert",
+      "**/*.crt",
+      "**/.dev.vars",
+      "**/secrets.yml"
+    ]
+  },
+  "tab_bar": {
+    "show": true,
+    "show_nav_history_buttons": true,
+    "show_tab_bar_buttons": true
+  },
+  "tabs": {
+    "close_position": "right",
+    "file_icons": true,
+    "git_status": true,
+    "activate_on_close": "neighbour",
+    "show_close_button": "hover",
+    "show_diagnostics": "off"
+  }
+}

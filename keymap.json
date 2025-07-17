@@ -1,0 +1,35 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-shift-g": "git_panel::ToggleFocus",
+      "cmd-t": "workspace::OpenInTerminal",
+      "cmd-shift-t": "terminal_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "!ContextEditor > Editor && mode == full",
+    "use_key_equivalents": true,
+    "bindings": {
+      "cmd-i": "assistant::InlineAssist"
+    }
+  },
+  {
+    "context": "Terminal",
+    "use_key_equivalents": true,
+    "bindings": {
+      "cmd-alt-up": "pane::SplitUp",
+      "cmd-alt-down": "pane::SplitDown",
+      "cmd-alt-left": "pane::SplitLeft",
+      "cmd-alt-right": "pane::SplitRight",
+      "cmd-alt-r": "terminal::RerunTask"
+    }
+  }
+]
