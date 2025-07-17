@@ -1,4 +1,4 @@
-# Zed IDE Configuration
+## Zed IDE Configuration
 
 A comprehensive configuration setup for the Zed IDE, including custom keybindings, settings, and workspace preferences optimized for development workflows.
 
