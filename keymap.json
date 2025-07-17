@@ -31,5 +31,18 @@
       "cmd-alt-right": "pane::SplitRight",
       "cmd-alt-r": "terminal::RerunTask"
     }
+  },
+  {
+    "context": "GitPanel",
+    "use_key_equivalents": true,
+    "bindings": {
+      "ctrl-g": "git::Fetch",
+      "ctrl-up": "git::Push",
+      "ctrl-down": "git::Pull",
+      "ctrl-shift-up": "git::ForcePush",
+      "ctrl-d": "git::Diff",
+      "ctrl-y": "git::StageAll",
+      "ctrl-shift-y": "git::UnstageAll"
+    }
   }
 ]
