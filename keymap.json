@@ -9,6 +9,7 @@
   {
     "context": "Workspace",
     "bindings": {
+      //"cmd-ctrl-e": "project_panel::ToggleFocus",
       "cmd-ctrl-g": "git_panel::ToggleFocus",
       "cmd-t": "workspace::OpenInTerminal",
       "cmd-ctrl-t": "terminal_panel::ToggleFocus"
