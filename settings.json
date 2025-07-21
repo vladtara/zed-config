@@ -14,8 +14,8 @@
   },
   "agent": {
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-4.1"
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4"
     },
     "play_sound_when_agent_done": true,
     "model_parameters": [],
@@ -33,13 +33,13 @@
   "buffer_font_weight": 500,
   "confirm_quit": false,
   "cursor_blink": true,
-  "cursor_shape": "block",
+  "cursor_shape": "bar",
   "hide_mouse": "on_typing_and_movement",
   "format_on_save": "on",
   "formatter": "auto",
   "theme": {
     "mode": "system",
-    "light": "Gruvbox Dark Hard",
+    "light": "One Dark",
     "dark": "Ayu Dark"
   },
   "edit_predictions": {
