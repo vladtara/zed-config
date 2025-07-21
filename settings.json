@@ -27,7 +27,7 @@
   "collaboration_panel": {
     "dock": "right"
   },
-  "icon_theme": "Colored Zed Icons Theme Dark",
+  "icon_theme": "JetBrains New UI Icons (Dark)",
   "ui_font_size": 15,
   "buffer_font_size": 15,
   "buffer_font_weight": 500,
@@ -39,7 +39,7 @@
   "formatter": "auto",
   "theme": {
     "mode": "system",
-    "light": "One Dark Pro",
+    "light": "Min Light (Blurred)",
     "dark": "Ayu Dark"
   },
   "edit_predictions": {
@@ -66,5 +66,39 @@
     "activate_on_close": "neighbour",
     "show_close_button": "hover",
     "show_diagnostics": "off"
+  },
+  "languages": {
+    "Python": {
+      "language_servers": ["basedpyright", "ruff", "!pyright"],
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "external": {
+            "command": "ruff",
+            "arguments": ["format", "-"]
+          }
+        },
+        {
+          "code_actions": {
+            // Fix all auto-fixable lint violations
+            "source.fixAll.ruff": true,
+            // Organize imports
+            "source.organizeImports.ruff": true
+          }
+        }
+      ]
+    }
+  },
+  "lsp": {
+    "basedpyright": {
+      "settings": {
+        "python.analysis": {
+          "diagnosticMode": "workspace"
+        },
+        "python": {
+          "pythonPath": ".venv/bin/python"
+        }
+      }
+    }
   }
 }
