@@ -15,7 +15,7 @@
   "agent": {
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-sonnet-4"
+      "model": "claude-opus-4"
     },
     "play_sound_when_agent_done": true,
     "model_parameters": [],
@@ -96,7 +96,7 @@
           "diagnosticMode": "workspace"
         },
         "python": {
-          "pythonPath": ".venv/bin/python"
+          "pythonPath": [".venv/bin/python", "venv/bin/python"]
         }
       }
     }
