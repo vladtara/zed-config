@@ -80,9 +80,7 @@
         },
         {
           "code_actions": {
-            // Fix all auto-fixable lint violations
             "source.fixAll.ruff": true,
-            // Organize imports
             "source.organizeImports.ruff": true
           }
         }
