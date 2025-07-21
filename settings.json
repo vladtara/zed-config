@@ -39,7 +39,7 @@
   "formatter": "auto",
   "theme": {
     "mode": "system",
-    "light": "Min Light (Blurred)",
+    "light": "Gruvbox Dark Hard",
     "dark": "Ayu Dark"
   },
   "edit_predictions": {
