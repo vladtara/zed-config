@@ -26,6 +26,7 @@
     "context": "Terminal",
     "use_key_equivalents": true,
     "bindings": {
+      "cmd-i": "assistant::InlineAssist",
       "cmd-alt-up": "pane::SplitUp",
       "cmd-alt-down": "pane::SplitDown",
       "cmd-alt-left": "pane::SplitLeft",
