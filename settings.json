@@ -7,6 +7,10 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "autosave": "on_focus_change",
+  "project_panel": {
+    "default_width": 360
+  },
   "auto_install_extensions": {
     "html": true,
     "dockerfile": true,
@@ -22,14 +26,16 @@
     "dock": "right"
   },
   "terminal": {
-    "dock": "bottom"
+    "dock": "bottom",
+    "default_width": 640,
+    "default_height": 420
   },
   "collaboration_panel": {
     "dock": "right"
   },
   "icon_theme": "Colored Zed Icons Theme Light",
   "ui_font_size": 15,
-  "buffer_font_size": 15,
+  "buffer_font_size": 16,
   "buffer_font_weight": 500,
   "confirm_quit": false,
   "cursor_blink": true,
