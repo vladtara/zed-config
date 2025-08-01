@@ -34,8 +34,8 @@
     "dock": "right"
   },
   "icon_theme": "Colored Zed Icons Theme Light",
-  "ui_font_size": 15,
-  "buffer_font_size": 16,
+  "ui_font_size": 17,
+  "buffer_font_size": 17,
   "buffer_font_weight": 500,
   "confirm_quit": false,
   "cursor_blink": true,
@@ -46,7 +46,7 @@
   "theme": {
     "mode": "system",
     "light": "One Dark",
-    "dark": "Ayu Dark"
+    "dark": "GitHub Dark Default"
   },
   "edit_predictions": {
     "mode": "subtle",
