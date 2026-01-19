@@ -7,31 +7,45 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "disable_ai": false,
+  "git_panel": {
+    "tree_view": true,
+    "sort_by_path": true,
+  },
+  "features": {
+    "edit_prediction_provider": "zed",
+  },
   "autosave": "on_focus_change",
   "project_panel": {
-    "default_width": 360
+    "default_width": 360,
   },
   "auto_install_extensions": {
     "html": true,
     "dockerfile": true,
-    "docker-compose": false
+    "docker-compose": false,
   },
   "agent": {
+    "message_editor_min_lines": 6,
+    "use_modifier_to_send": true,
+    "commit_message_model": {
+      "provider": "zed.dev",
+      "model": "Claude Sonnet 4.5",
+    },
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-opus-4"
+      "model": "Claude Sonnet 4.5",
     },
-    "play_sound_when_agent_done": true,
+    "play_sound_when_agent_done": false,
     "model_parameters": [],
-    "dock": "right"
+    "dock": "right",
   },
   "terminal": {
     "dock": "bottom",
     "default_width": 640,
-    "default_height": 420
+    "default_height": 420,
   },
   "collaboration_panel": {
-    "dock": "right"
+    "dock": "right",
   },
   "icon_theme": "Colored Zed Icons Theme Light",
   "ui_font_size": 17,
@@ -46,7 +60,7 @@
   "theme": {
     "mode": "system",
     "light": "One Dark",
-    "dark": "GitHub Dark Default"
+    "dark": "GitHub Dark Default",
   },
   "edit_predictions": {
     "mode": "subtle",
@@ -57,13 +71,13 @@
       "**/*.cert",
       "**/*.crt",
       "**/.dev.vars",
-      "**/secrets.yml"
-    ]
+      "**/secrets.yml",
+    ],
   },
   "tab_bar": {
     "show": true,
     "show_nav_history_buttons": true,
-    "show_tab_bar_buttons": true
+    "show_tab_bar_buttons": true,
   },
   "tabs": {
     "close_position": "right",
@@ -71,7 +85,7 @@
     "git_status": true,
     "activate_on_close": "neighbour",
     "show_close_button": "hover",
-    "show_diagnostics": "off"
+    "show_diagnostics": "off",
   },
   "languages": {
     "Python": {
@@ -81,28 +95,28 @@
         {
           "external": {
             "command": "ruff",
-            "arguments": ["format", "-"]
-          }
+            "arguments": ["format", "-"],
+          },
         },
         {
-          "code_actions": {
-            "source.fixAll.ruff": true,
-            "source.organizeImports.ruff": true
-          }
-        }
-      ]
-    }
+          "code_action": "source.fixAll.ruff",
+        },
+        {
+          "code_action": "source.organizeImports.ruff",
+        },
+      ],
+    },
   },
   "lsp": {
     "basedpyright": {
       "settings": {
         "python.analysis": {
-          "diagnosticMode": "workspace"
+          "diagnosticMode": "workspace",
         },
         "python": {
-          "pythonPath": [".venv/bin/python", "venv/bin/python"]
-        }
-      }
-    }
-  }
+          "pythonPath": [".venv/bin/python", "venv/bin/python"],
+        },
+      },
+    },
+  },
 }
