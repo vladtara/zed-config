@@ -7,13 +7,25 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent_servers": {
+    "claude": {
+      "favorite_config_option_values": {
+        "mode": [
+          "plan"
+        ]
+      }
+    },
+    "github-copilot": {
+      "favorite_models": ["gpt-5.2-codex", "claude-opus-4.5"],
+      "type": "registry",
+    },
+  },
+  "context_servers": {},
   "disable_ai": false,
   "git_panel": {
+    "dock": "left",
     "tree_view": true,
-    "sort_by_path": true,
-  },
-  "features": {
-    "edit_prediction_provider": "zed",
+    "sort_by_path": false,
   },
   "autosave": "on_focus_change",
   "project_panel": {
@@ -25,15 +37,24 @@
     "docker-compose": false,
   },
   "agent": {
-    "message_editor_min_lines": 6,
+    "tool_permissions": {
+      "default": "allow"
+    },
+    "inline_assistant_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4-6",
+      "enable_thinking": false
+    },
+    "notify_when_agent_waiting": "primary_screen",
+    "message_editor_min_lines": 7,
     "use_modifier_to_send": true,
     "commit_message_model": {
       "provider": "zed.dev",
-      "model": "Claude Sonnet 4.5",
+      "model": "claude-sonnet-4.5",
     },
     "default_model": {
       "provider": "zed.dev",
-      "model": "Claude Sonnet 4.5",
+      "model": "claude-sonnet-4-5",
     },
     "play_sound_when_agent_done": false,
     "model_parameters": [],
@@ -47,7 +68,7 @@
   "collaboration_panel": {
     "dock": "right",
   },
-  "icon_theme": "Colored Zed Icons Theme Light",
+  "icon_theme": "VSCode Icons for Zed (Dark Official Icons)",
   "ui_font_size": 17,
   "buffer_font_size": 17,
   "buffer_font_weight": 500,
@@ -57,12 +78,9 @@
   "hide_mouse": "on_typing_and_movement",
   "format_on_save": "on",
   "formatter": "auto",
-  "theme": {
-    "mode": "system",
-    "light": "One Dark",
-    "dark": "GitHub Dark Default",
-  },
+  "theme": "GitHub Dark High Contrast",
   "edit_predictions": {
+    "provider": "zed",
     "mode": "subtle",
     "disabled_globs": [
       "**/.env*",
@@ -88,6 +106,9 @@
     "show_diagnostics": "off",
   },
   "languages": {
+    "Markdown": {
+      "format_on_save": "on",
+    },
     "Python": {
       "language_servers": ["basedpyright", "ruff", "!pyright"],
       "format_on_save": "on",
@@ -108,6 +129,19 @@
     },
   },
   "lsp": {
+    "gopls": {
+      "initialization_options": {
+        "hints": {
+          "assignVariableTypes": true,
+          "compositeLiteralFields": true,
+          "compositeLiteralTypes": true,
+          "constantValues": true,
+          "functionTypeParameters": true,
+          "parameterNames": true,
+          "rangeVariableTypes": true,
+        },
+      },
+    },
     "basedpyright": {
       "settings": {
         "python.analysis": {
@@ -115,6 +149,13 @@
         },
         "python": {
           "pythonPath": [".venv/bin/python", "venv/bin/python"],
+        },
+      },
+    },
+    "terraform-ls": {
+      "initialization_options": {
+        "experimentalFeatures": {
+          "prefillRequiredFields": true,
         },
       },
     },
