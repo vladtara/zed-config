@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+
+
 PACKAGES=(
     # Add package names here, e.g. git wget node
     git
@@ -78,6 +80,11 @@ install_cask() {
     fi
 }
 
+js_mangers() {
+    curl -fsSL https://bun.com/install | bash
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
+}
+
 main() {
     check_brew_installed
     update_brew
@@ -88,6 +95,9 @@ main() {
         install_cask "$cask"
     done
     echo "All packages processed."
+    echo "Install bun and nvm"
+    js_mangers()
+    echo "All runtime processed."
 }
 
 main
