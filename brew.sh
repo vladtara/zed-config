@@ -7,7 +7,7 @@ PACKAGES=(
     gh
     glab
     pre-commit
-    tfswitch
+    warrensbox/tap/tfswitch
     bash
     starship
     zellij
@@ -34,6 +34,16 @@ PACKAGES=(
     ruff
     uv
     dust
+    zsh-autosuggestions
+    p7zip
+)
+
+CASKS=(
+    rectangle
+    maccy
+    hiddenbar
+    stats
+    devtoys
 )
 
 check_brew_installed() {
@@ -58,11 +68,24 @@ install_package() {
     fi
 }
 
+install_cask() {
+    local cask="$1"
+    if brew list --cask | grep -qx "$cask"; then
+        echo "$cask (cask) is already installed."
+    else
+        echo "Installing $cask (cask)..."
+        brew install --cask "$cask"
+    fi
+}
+
 main() {
     check_brew_installed
     update_brew
     for pkg in "${PACKAGES[@]}"; do
         install_package "$pkg"
+    done
+    for cask in "${CASKS[@]}"; do
+        install_cask "$cask"
     done
     echo "All packages processed."
 }
