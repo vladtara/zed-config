@@ -39,6 +39,7 @@ PACKAGES=(
     zsh-autosuggestions
     p7zip
     pyenv
+    pyenv-virtualenv
 )
 
 CASKS=(
@@ -49,6 +50,7 @@ CASKS=(
     devtoys
     visual-studio-code
     ghostty
+    zed
 
 
 )
