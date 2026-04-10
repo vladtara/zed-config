@@ -46,6 +46,10 @@ CASKS=(
     hiddenbar
     stats
     devtoys
+    visual-studio-code
+    ghostty
+
+
 )
 
 check_brew_installed() {
@@ -96,7 +100,7 @@ main() {
     done
     echo "All packages processed."
     echo "Install bun and nvm"
-    js_mangers()
+    js_mangers
     echo "All runtime processed."
 }
 
