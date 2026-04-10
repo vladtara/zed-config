@@ -38,6 +38,7 @@ PACKAGES=(
     dust
     zsh-autosuggestions
     p7zip
+    pyenv
 )
 
 CASKS=(
