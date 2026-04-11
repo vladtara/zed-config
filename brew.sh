@@ -8,6 +8,7 @@ PACKAGES=(
     git
     gh
     glab
+    go
     pre-commit
     warrensbox/tap/tfswitch
     bash
@@ -40,6 +41,8 @@ PACKAGES=(
     p7zip
     pyenv
     pyenv-virtualenv
+    lazygit
+    pulumi/tap/pulumi
 )
 
 CASKS=(
@@ -87,9 +90,14 @@ install_cask() {
     fi
 }
 
-js_mangers() {
+mangers() {
     curl -fsSL https://bun.com/install | bash
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+}
+
+cargo_install() {
+    cargo install --locked zee
 }
 
 main() {
@@ -102,9 +110,12 @@ main() {
         install_cask "$cask"
     done
     echo "All packages processed."
-    echo "Install bun and nvm"
-    js_mangers
+    echo "Install bun and nvm, rust"
+    mangers
     echo "All runtime processed."
+    echo "Install cargo packages"
+    cargo_install
+    echo "All cargo packages processed."
 }
 
 main

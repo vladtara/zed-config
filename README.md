@@ -51,6 +51,19 @@ A comprehensive configuration setup for the Zed IDE, including custom keybinding
 
 5. **Restart Zed IDE** to apply the new configuration.
 
+### Optional AI CLI tools
+
+If you also want the AI CLIs used alongside this setup, run:
+
+```bash
+chmod +x ai_cli.sh
+./ai_cli.sh
+```
+
+This installs OpenAI Codex CLI, GitHub Copilot CLI, Google Gemini CLI, OpenCode AI CLI, PI Coding Agent, PI AI, Claude CLI, and Ollama.
+
+Use `./ai_cli.sh --force` to reinstall or refresh the supported tools.
+
 ### Git Repository
 
 1. **Fork this repository** or create your own based on this template
