@@ -1,101 +1,195 @@
-### Zed IDE Configuration
+# zed-config
 
-A comprehensive configuration setup for the Zed IDE, including custom keybindings, settings, and workspace preferences optimized for development workflows.
+Personal developer environment bootstrap with terminal, prompt, Vim/Neovim, Homebrew, and AI CLI tooling.
 
-## Features
+The repository name is historical. The repo now works as a small macOS-oriented dotfiles and tooling setup for getting a machine ready for daily development quickly.
 
-- **Custom Keybindings**: Streamlined shortcuts for git panel, terminal, and assistant features
-- **Optimized Settings**: Carefully tuned editor settings for productivity
-- **Theme Configuration**: System-adaptive theme with One Dark Pro (light) and Ayu Dark (dark)
-- **Terminal Integration**: Enhanced terminal experience with split pane support
-- **AI Assistant**: Configured with Copilot Chat integration
+## What is in this repo
 
-## Installation
+- Terminal and prompt configuration for Ghostty and Starship
+- Minimal Vim and Neovim setup
+- Homebrew bootstrap script for CLI tools and desktop apps
+- AI CLI installer script for local coding-agent tooling
 
-### Prerequisites
+## Repository layout
 
-- [Zed IDE](https://zed.dev) installed on your system
-- Git installed and configured
+```text
+.
+├── .vimrc
+├── ai_cli.sh
+├── brew.sh
+├── config
+│   ├── ghostty.txt
+│   ├── nvim/init.vim
+│   └── starship.toml
+└── README.md
+```
 
-### Setup Instructions
+## Other config files
 
-1. **Clone the repository**:
+### `.vimrc`
 
-   ```bash
-   git clone https://github.com/vladtara/zed-config.git
-   ```
+Small Vim profile with:
 
-2. **Navigate to the Zed configuration directory**:
+- line numbers
+- 2-space indentation
+- spaces instead of tabs
+- search highlighting and smart case
+- dark background
 
-   The Zed configuration is located at `~/.config/zed/`
+### `config/nvim/init.vim`
 
-3. **Backup existing configuration** (if any):
+Minimal Neovim setup with:
 
-   ```bash
-   mv ~/.config/zed ~/.config/zed.backup
-   ```
+- relative numbers
+- system clipboard integration
+- cursor line
+- split navigation defaults
+- 2-space indentation
 
-4. **Create symbolic link or copy files**:
+### `config/starship.toml`
 
-   **Option A: Symbolic Link (Recommended)**
+Starship prompt with:
 
-   ```bash
-   ln -s /path/to/zed-config ~/.config/zed
-   ```
+- extra newline before prompt
+- custom success and error symbols
+- package module disabled
 
-   **Option B: Copy Files**
+### `config/ghostty.txt`
 
-   ```bash
-   cp -r /path/to/zed-config ~/.config/zed
-   ```
+Ghostty terminal preferences with:
 
-5. **Restart Zed IDE** to apply the new configuration.
+- `Box` theme
+- `Osaka-Mono` font
+- large font size
+- fixed window dimensions
+- hollow block cursor
+- macOS option key mapped as alt
 
-### Optional AI CLI tools
+## Bootstrap scripts
 
-If you also want the AI CLIs used alongside this setup, run:
+### `brew.sh`
+
+Installs the main local toolchain through Homebrew.
+
+Formulae currently included:
+
+- `git`, `gh`, `glab`, `go`, `pre-commit`, `tfswitch`
+- `bash`, `starship`, `zellij`, `fzf`, `zoxide`, `nushell`
+- `neovim`, `bat`, `eza`, `just`, `htop`, `btop`
+- `jq`, `jql`, `yq`
+- `k9s`, `k3sup`, `helm`, `helm-docs`, `flux`, `argocd`, `sops`
+- `nvm`, `ruff`, `uv`, `pyenv`, `pyenv-virtualenv`
+- `dust`, `zsh-autosuggestions`, `p7zip`, `lazygit`
+- `pulumi`
+
+Casks currently included:
+
+- `rectangle`
+- `maccy`
+- `hiddenbar`
+- `stats`
+- `devtoys`
+- `visual-studio-code`
+- `ghostty`
+- `zed`
+
+The script also installs:
+
+- Bun
+- NVM
+- Rust via `rustup`
+- `zee` via `cargo install --locked zee`
+
+Run it with:
+
+```bash
+chmod +x brew.sh
+./brew.sh
+```
+
+### `ai_cli.sh`
+
+Installs the AI CLIs used alongside this setup.
+
+Included tools:
+
+- OpenAI Codex CLI
+- GitHub Copilot CLI
+- Google Gemini CLI
+- OpenCode AI CLI
+- PI Coding Agent
+- PI AI
+- Claude CLI
+- Ollama
+
+Requirements:
+
+- `npm`
+- `curl`
+- `mktemp`
+
+Run it with:
 
 ```bash
 chmod +x ai_cli.sh
 ./ai_cli.sh
 ```
 
-This installs OpenAI Codex CLI, GitHub Copilot CLI, Google Gemini CLI, OpenCode AI CLI, PI Coding Agent, PI AI, Claude CLI, and Ollama.
+To reinstall everything:
 
-Use `./ai_cli.sh --force` to reinstall or refresh the supported tools.
+```bash
+./ai_cli.sh --force
+```
 
-### Git Repository
+## Suggested installation
 
-1. **Fork this repository** or create your own based on this template
-2. **Clone your fork** on each machine following the installation steps above
-3. **Keep configurations in sync** by pushing/pulling changes:
-   ```bash
-   cd ~/.config/zed  # or your Zed config directory
-   git add .
-   git commit -m "Update configuration"
-   git push origin main
-   ```
+Clone the repository:
 
-## Contributing
+```bash
+git clone git@github.com:vladtara/zed-config.git
+cd zed-config
+```
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+Create target directories:
+
+```bash
+mkdir -p ~/.config/nvim ~/.config/ghostty
+```
+
+Link the files you want to use:
+
+```bash
+ln -sf "$PWD/.vimrc" ~/.vimrc
+ln -sf "$PWD/config/nvim/init.vim" ~/.config/nvim/init.vim
+ln -sf "$PWD/config/starship.toml" ~/.config/starship.toml
+ln -sf "$PWD/config/ghostty.txt" ~/.config/ghostty/config
+```
+
+Then optionally bootstrap packages and AI tools:
+
+```bash
+./brew.sh
+./ai_cli.sh
+```
+
+## Useful package
+
+> [!TIP]
+> [`get-shit-done`](https://github.com/gsd-build/get-shit-done) is a lightweight spec-driven workflow system for AI coding agents such as Claude Code, Codex, Copilot, and Gemini CLI. It is useful if you want stronger planning, context management, and execution workflows on top of the CLI tools installed by `ai_cli.sh`.
+>
+> Quick start:
+>
+> ```bash
+> npx get-shit-done-cc@latest
+> ```
+
+## Notes
+
+- This setup is mainly macOS-oriented because `brew.sh` uses Homebrew formulas and casks.
+- The repo is intentionally simple and uses plain files plus shell scripts instead of a larger dotfiles framework.
+- Review scripts before running them on a fresh machine.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Support
-
-If you encounter any issues or have questions:
-
-1. Check the [Zed documentation](https://zed.dev/docs)
-2. Search existing issues in this repository
-3. Create a new issue with detailed information about your problem
-
----
-
-**Note**: Always backup your existing configuration before applying these settings. This configuration is optimized for development workflows but may need adjustment based on your specific needs.
+MIT. See [LICENSE](LICENSE).
