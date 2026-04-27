@@ -30,7 +30,8 @@ PACKAGES=(
     k3sup
     helm
     helm-docs
-    flux
+    dgunzy/tap/flux9s
+    fluxcd/tap/flux
     argocd
     sops
     nvm
@@ -54,6 +55,7 @@ CASKS=(
     visual-studio-code
     ghostty
     zed
+    freelens
 
 
 )
