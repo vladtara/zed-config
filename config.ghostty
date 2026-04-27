@@ -1,0 +1,11 @@
+theme = Box
+window-height = 35
+window-width = 100
+font-family = "Osaka-Mono"
+font-size = 17
+unfocused-split-opacity = 1
+macos-option-as-alt = true
+keybind = opt+ctrl+arrow_down=goto_split:down
+keybind = opt+ctrl+arrow_left=goto_split:left
+keybind = opt+ctrl+arrow_right=goto_split:right
+keybind = opt+ctrl+arrow_up=goto_split:up
