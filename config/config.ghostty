@@ -1,8 +1,11 @@
-theme = Box
+theme = Citruszest
 window-height = 35
 window-width = 100
 font-family = "Osaka-Mono"
 font-size = 17
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
 unfocused-split-opacity = 1
 macos-option-as-alt = true
 keybind = opt+ctrl+arrow_down=goto_split:down
