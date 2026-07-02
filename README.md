@@ -80,7 +80,7 @@ Formulae currently included:
 - `jq`, `jql`, `yq`
 - `k9s`, `k3sup`, `helm`, `helm-docs`, `flux`, `argocd`, `sops`
 - `nvm`, `ruff`, `uv`, `pyenv`, `pyenv-virtualenv`
-- `dust`, `zsh-autosuggestions`, `p7zip`, `lazygit`
+- `dust`, `zsh-autosuggestions`, `p7zip`, `lazygit`, `ripgrep`
 - `pulumi`
 
 Casks currently included:

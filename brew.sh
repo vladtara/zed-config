@@ -44,6 +44,7 @@ PACKAGES=(
     pyenv-virtualenv
     lazygit
     pulumi/tap/pulumi
+    ripgrep
 )
 
 CASKS=(
