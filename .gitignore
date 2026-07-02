@@ -4,3 +4,7 @@ prompts
 settings_backup.json
 snippets
 themes
+
+# AI
+.agents
+skills-lock.json
